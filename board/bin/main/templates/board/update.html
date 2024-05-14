@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수정</title>
+</head>
+<body>
+    <table>
+        <td>제목</td>
+        <td>
+            <input type="text" name="title" th:value="${board.title}">
+        </td>
+        <td>작성자</td>
+        <td>
+            <input type="text" name="writer" th:value="${board.writer}">
+        </td>
+        <td colspan="2">
+            <textarea name="content" id="content" cols="40" rows="5" th:text="${board.content}"></textarea>
+        </td>
+    </table>
+    <div>
+        <button type="submit">수정</button>
+        <button type="button" onclick="actionDelete()">삭제</button>
+        <button type="button" onclick="moveList()">목록</button>
+    </div>
+
+    <script>
+        function actionDelete() {
+            location.href = '/board/delete'
+        }
+
+        function moveList() {
+            location.href = '/board/list'
+        }
+    </script>
+</body>
+</html>
